@@ -1,0 +1,228 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  
+}
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+	html {
+	  transform: rotate(-180deg);
+	  transform-origin: left top;
+	  width: 100vh;
+	  overflow-x: hidden;
+	  position: absolute;
+	  top: 100%;
+	  left: 0;
+	  background-color: royalblue;
+	}
+
+  }
+.container-fluid{
+    height: 100vh;
+    width: 100%;
+    background-image: url(media/image.png);
+    background-size: cover;
+    background-position: center; 
+    position: relative; 
+   
+}
+.navbar{
+    width: 100%;
+    margin: auto;
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar ul li{
+    list-style: none;
+    display:inline-block;
+    margin: 0 15px;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: #5f5f5f;
+    font-size: 15px;
+
+}
+.content{
+    width: 100px;
+    position:absolute;
+    top: 30%;
+}
+
+
+
+#icona{
+	
+	position: absolute;
+	top: 40%;
+	left: 80%;
+}
+#iconb{
+    width: 80px;
+    margin-left: 150px;
+    margin-top: 80px;
+    cursor: pointer;
+}
+  
+  /* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+
+
+.player {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 320px;
+	height: 480px;
+	overflow: hidden;
+    
+}
+.player .main {
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(to right, pink 0%, pink 50%, powderblue 50%, powderblue 100%);
+	transition:all 500ms ease-in-out;
+}
+.player .main .thumbnail img {
+	width: 680px;
+	height: 260px;
+}
+.player .main .seekbar {
+	margin-top: -15px;
+}
+.player .main .seekbar input[type="range"] {
+	-webkit-appearance:none;
+	width: 100%;
+	height: 4px;
+	outline: none;
+	background: #aaa;
+	overflow: hidden;
+}
+.player .main .seekbar input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance:none;
+	width: 0px;
+	height: 0px;
+	box-shadow: -300px 0px 0px 300px #00acee;
+}
+.player .main .details {
+	text-align: center;
+	padding: 15px 0px;
+}
+.player .main .details h2 {
+	font-style: italic;font-size: 18px;
+	color:#eee;
+	margin-bottom: 5px;
+}
+.player .main .details p {
+	font-size: 15px;
+	color: #aaa;
+}
+.player .main .controls {
+	display: flex;
+	justify-content: center;
+	margin:8px 0px;
+}
+.player .main .controls > div {
+	margin:0px 30px;
+	cursor: pointer;
+}
+.player .main .controls i.fa {
+	font-size:25px;
+	color: #ddd;
+}
+.player .main .controls > div.play-pause-control i.fa-play {
+	display: none;
+}
+.player .main .controls > div.play-pause-control.paused i.fa-play {
+	display: block;
+}
+.player .main .controls > div.play-pause-control.paused i.fa-pause {
+	display: none;
+}
+.player .player-list {
+	position: absolute;
+	width: 100%;
+	margin-top:-20px;
+	height: 350px;
+	overflow-y: scroll;
+	background: rgba(0,0,0,0.8);
+	z-index:2;
+	transition:all 500ms ease-in-out;
+}
+.player .player-list .toggle-list {
+	position: sticky;
+	top:0px;
+	text-align: center;
+	height: 20px;
+	line-height: 20px;
+	background: #555;
+}
+.player .player-list .toggle-list i.fa {
+	color: #ccc;
+	font-size: 20px;
+	font-weight: 600;
+}
+.player .player-list .toggle-list i.fa-angle-down {
+	display: none;
+}
+.player .player-list .toggle-list.active i.fa-angle-up {
+	display: block;
+}
+.player .player-list .toggle-list.active i.fa-angle-down {
+	display: none;
+}
+.player .list {
+	padding: 10px;
+}
+.player .list .item {
+	display: flex;
+	padding: 5px 0px;
+	border-bottom: 1px solid #222;
+	cursor: pointer;
+}
+.player .list .item .thumbnail {
+	width: 50px;
+	height: 50px;
+	overflow: hidden;
+}
+.player .list .thumbnail img {
+	width: 100%;
+	height: 100%;
+}
+.player .list .item .details {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 0px 10px;
+}
+.player .list .item .details h2 {
+	color: #eee;
+	font-size: 16px;
+}
+.player .list .item .details p {
+	color: #aaa;
+	font-size: 15px;
+}
+.player .player-list::-webkit-scrollbar {
+	width: 5px;
+	background: #222;
+}
+.player .player-list::-webkit-scrollbar-thumb {
+	background: #00acee;
+}
+.player.activeSongList .player-list {
+	margin-top: -350px;
+}
+.player.activeSongList .main {
+	filter:blur(5px);
+}
+
