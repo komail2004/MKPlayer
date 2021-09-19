@@ -385,9 +385,6 @@
 	  main.seekbar.setAttribute("max",0);
 	  main.audio.addEventListener("canplay",function(){
 		  main.audio.play();
-		  if(!main.audio.paused){
-			  main.playPauseControl.classList.remove("paused");
-		  }
 		  main.seekbar.setAttribute("max",parseInt(main.audio.duration));
 		  main.audio.onended = function(){
 			  main.nextControl.click();
